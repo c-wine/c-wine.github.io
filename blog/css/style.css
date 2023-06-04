@@ -48,7 +48,71 @@
 
 /* ------ START WRITING YOUR CODE BELOW ------ */
 
-/* General setup */
+/*  IMPORTED FONTS  */
+
+@font-face {
+    font-family: 'ultra';
+    src: url('../fonts//serif/ultra-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/sans-serif/roboto-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lato';
+    src: url('../fonts/sans-serif/lato-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*  TYPOGRAPHY  */
+
+p {
+    font-family: roboto, Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: lato, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 0.25rem;
+    transform: rotate(-5deg);
+}
+
+.highlight {
+    display: inline-block;
+    font-family: ultra, Georgia, serif;
+    padding: .25rem 1.25rem;
+    border-radius: 0.3rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: #400101;
+    background-color: #D98997;
+    box-shadow: 5px 5px 4px -1px #A6A085;
+}
+
+button {
+    display: inline-block;
+    font-family: ultra, Georgia, serif;
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding: .25rem 1.25rem;
+    border-radius: 0.3rem;
+    color: #D9D7CC;
+    background-color: #39593E;
+    box-shadow: 5px 5px 4px -1px #A6A085;
+}
+
+/*  GENERAL SETUP AND DEFAULTS  */
 
 * {
     box-sizing: border-box;
@@ -64,181 +128,107 @@ body {
     min-width:56.25rem;
 }
 
-/* Layout */
 
-main {
-    overflow:auto;
-    min-width:45rem;
-    
+/*  LAYOUT  */
+
+header {
+    padding: 0.5rem 0rem 1rem 0rem;
 }
 
-section {
-    float: left;
-    min-width: 22.5rem;
-    width:50%;
+nav {
+    margin-top: 3rem;
+}
+
+.main-section {
+    display: grid;
+    grid-template-columns: 3.5fr 1fr;
+    grid-gap: 1rem;
+}
+
+article {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+aside {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    border-left: 1px solid #0D0000;
+    padding-left: 0.75rem;
+}
+
+aside p {
+    border-bottom: 1px solid #0D0000;
+    padding-bottom: 0.5rem;
+}
+.subsection {
+    display: flex;
+    margin: 1rem 0rem;
+}
+
+
+/*  IMAGES AND FIGURE  */
+
+img {
+    width: 100%;
 }
 
 figure {
-    width:60%;
-    margin:0 10% 0 0;
-    float:left;
+    margin: 0px;
 }
 
-figure img {
-    width:100%;
-    max-width:25rem;
-}
-
-figcaption {
-    margin:.375rem 0;
-}
-
-.long-list {
-    margin-top:0;
-}
-
-nav {
+.article-image {
+    width: 33%;
     float: left;
-    width:11.25rem;
+    margin-right: 1rem;
 }
 
-footer {
-    clear: both;
-    margin-top:1.5rem;
+.subsection figure {
+    margin: 0rem 0.25rem;
+    background-color: #D9D7CC;
 }
 
-section, aside, nav, footer {
-  padding: .5rem;
+.subsection figure figcaption {
+    padding: 0.5rem 0.5rem;
+    font-family: roboto, Arial, sans-serif;
+    font-size: .75em;
 }
 
-/* header and footer */
-
-header, footer {
-    border-top: .125rem solid #33658A;
-    border-bottom: .125rem solid #33658A;
-}
-
-  /* Imported Typfaces */
-
-@font-face{
-    font-family: montserrat;
-    src: url(../fonts/montserrat-regular.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face{
-    font-family: josefinslab;
-    src: url(../fonts/josefinslab-regular.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-/* Typography Styles */
-
-html {
-    font-family: montserrat, Arial, sans-serif;
-}
-
-h1, h2 {
-    font-family: josefinslab, Georgia, serif;
-    letter-spacing: 0.125rem;
-}
-
-h1 {
-    font-size: 3.75rem;
-    margin: 1.125rem;
-    text-align: center;
-}
-
-h2 {
-    font-size: 1.5rem;
-}
-
-h2 + p {
-    text-indent: 1.5rem;
-}
-
-p {
-    font-size: 0.75rem;
-    letter-spacing: 0.03125rem;
-    word-spacing: 0.125rem;
-}
-
-li {
-    font-size: 0.75rem;
-    letter-spacing: 0.03125rem;
-    word-spacing: 0.125rem;
-}
-
-figcaption {
-    font-size: 0.75rem;
-    margin-bottom: 2rem;
-}
-
-/* Link Styling */
+/*  LINKS AND NAVIGATION  */
 
 a {
-    outline: none;
+    text-decoration: none;
+    color: #39593E;
 }
 
-a:link, a:visited {
-    color: #33658A;
-}
 
 a:focus, a:hover {
-    text-decoration: none;
-}
-
-/* List Styling */
-
-ul {
-    margin: 1rem 0;
-    list-style-type: square;
-}
-
-ol {
-    margin: 1rem 0;
-    list-style-type: lower-alpha;
-}
-
-.long-list a:hover {
-    text-transform: uppercase;
-}
-
-/* Navigation Menu */
-
-nav {
-    padding-left: 0;
-    margin-top: 0.25rem;
+    color: #400101;
 }
 
 nav a {
-    text-decoration: none;
     display: inline-block;
-    width: 100%;
-    line-height: 3;
-    text-align: center;
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-    border: 0.0625rem solid #33658A;
+    padding: 1.25rem 2rem;
+    font-size: 1.5rem;
+    font-family: lato, Arial, sans-serif;
+    color: #39593E;
 }
 
-nav a:focus, a:hover {
-    color: #fff;
-    background: #33658A;
+nav {
+    border-top: 1px solid #0D0000;
+    border-bottom: 1px solid #0D0000; 
 }
 
-nav a:active {
-    color: #fff;
-    background: #000;
+nav a:hover {
+    text-decoration: line-through;
+    transform: rotate(6deg);
 }
 
-/* Footer Styles */
-
-footer {
-    text-align: center;
+nav a:focus {
+    text-decoration: line-through;
+    transform: rotate(6deg);
 }
 
-
-
-
+.expand {
+    font-size: 0.25rem;
+}
